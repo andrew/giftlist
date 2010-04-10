@@ -1,0 +1,21 @@
+%h1 Viewing gift
+
+%div[current_object]
+  %p.title
+    %strong Title
+    = h current_object.title
+  %p.description
+    %strong Description
+    = h current_object.description
+  %p.url
+    %strong Url
+    = h current_object.url
+  %p.price
+    %strong Price
+    = h current_object.price
+
+= link_to 'Edit', edit_object_path
+|
+= link_to 'Destroy', object_path, :confirm => 'Really destroy gift?', :method => :delete
+|
+= link_to 'Back', objects_path

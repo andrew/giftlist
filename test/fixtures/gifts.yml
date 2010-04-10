@@ -1,0 +1,12 @@
+one:
+  id: 1
+  title: MyString
+  description: MyText
+  url: MyString
+  price: 1.5
+two:
+  id: 2
+  title: MyString
+  description: MyText
+  url: MyString
+  price: 1.5

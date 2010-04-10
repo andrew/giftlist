@@ -1,0 +1,18 @@
+%div[gift]
+  %h2.title
+    = h gift.title
+  %p.description
+    %strong Description
+    = h gift.description
+  %p.url
+    %strong Url
+    = h gift.url
+  %p.price
+    %strong Price
+    = h gift.price
+
+  - if gift.reserved?
+    This gift has been reserved by
+    = gift.reservation
+  - else
+    = link_to 'Reserve', new_gift_reservation_path(gift)
