@@ -4,7 +4,10 @@ class ReservationsController < ApplicationController
     belongs_to :gift
 
     response_for :create do |format|
-      format.html { redirect_to gifts_path }
+      format.html do
+        Notifier.deliver_new_reservation(@reservation)
+        redirect_to gifts_path
+      end
     end
   end
 end
