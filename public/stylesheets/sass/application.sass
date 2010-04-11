@@ -1,0 +1,81 @@
+body
+  color: #5E3F1B
+  font: 100%/100% Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif
+
+a
+  color: #FF6A00
+  text-decoration: none
+
+  &:hover
+    color: #FF6A00
+    text-decoration: underline
+
+h1, h2, h3, h4, dt
+  color: #FF6A00
+
+
+h2
+  margin: 0px 0px 40px 0px
+  color: #5E3F1B
+  font-size: 36px
+
+
+p
+  margin: 15px 0
+  font-family: georgia,times,serif
+  line-height: 1.3em
+
+.clearfix
+  :display inline-block
+
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+
+.gift
+  :position relative
+  :width 100%
+  :margin 0 0 20px
+  :padding 20px 0
+  :border-bottom 1px solid #EBC9AF
+  .title
+    :font-size 22px
+    :margin 0
+    span
+      :font-size 0.8em
+      :margin-left 10px
+      :font-style italic
+      :color #BF9B6B
+  .description
+    :padding-right 290px
+  .reservation
+    :width 270px
+    :position absolute
+    :right 20px
+    :top 40px
+    text-align: right
+    color: #555
+    .details
+      color: #777
+      font-size: 0.9em
+      margin-bottom: 5px
+    a
+      font: 14px Arial, Helvetica, 'Helvetica Neue', Verdana, sans-serif
+      display: inline-block 
+      padding: 5px 10px 6px
+      color: #fff
+      text-decoration: none
+      -moz-border-radius: 5px 
+      -webkit-border-radius: 5px
+      -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
+      border-bottom: 1px solid rgba(0,0,0,0.25)
+      position: relative
+      cursor: pointer
+      background-color: #2daebf
+      &:hover
+        background-color: #007d9a

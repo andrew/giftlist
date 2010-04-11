@@ -1,18 +1,16 @@
-%div[gift]
+.clearfix[gift]
   %h2.title
-    = h gift.title
-  %p.description
-    %strong Description
-    = h gift.description
-  %p.url
-    %strong Url
-    = h gift.url
-  %p.price
-    %strong Price
-    = h gift.price
+    = link_to_unless gift.url.blank?, h(gift.title), gift.url
+    %span.price
+      = number_to_currency gift.price, :unit => "&pound;"
+  .description= simple_format h(gift.description)
 
-  - if gift.reserved?
-    This gift has been reserved by
-    = gift.reservation
-  - else
-    = link_to 'Reserve', new_gift_reservation_path(gift)
+  .reservation
+    - if gift.reserved?
+      .details
+        This gift was reserved by
+      = gift.reservation
+      = time_ago_in_words gift.reservation.created_at
+      ago
+    - else
+      = link_to 'Reserve this gift &raquo;', new_gift_reservation_path(gift)

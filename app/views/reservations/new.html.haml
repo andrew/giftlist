@@ -1,9 +1,11 @@
-%h1 Creating reservation
+%h1
+  Reserving
+  = @gift
 
 = error_messages_for :reservation
 
 - form_for(:reservation, :url => objects_url) do |f|
   = render :partial => "form", :locals => {:f => f}
-  %p= submit_tag "Create"
-
-= link_to 'Back', objects_path
+  %p
+    = submit_tag "Make your reservation"
+    = link_to 'Back to the gifts', root_path
