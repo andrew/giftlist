@@ -1,9 +1,9 @@
 class Gift < ActiveRecord::Base
-  has_one :reservation
+  has_many :reservations
   validates_presence_of :title
 
   def reserved?
-    reservation.present?
+    reservations.any?
   end
 
   def to_s
