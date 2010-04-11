@@ -6,6 +6,10 @@ class Gift < ActiveRecord::Base
     reservations.any?
   end
 
+  def reservation
+    reservations.first
+  end
+
   def to_s
     title
   end
