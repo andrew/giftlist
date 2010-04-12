@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_filter :require_user, :except => [:new, :create]
+
   make_resourceful do
     actions :all
     belongs_to :gift
