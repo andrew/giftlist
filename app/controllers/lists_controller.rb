@@ -8,4 +8,8 @@ class ListsController < ApplicationController
       3.times { current_object.gifts.build }
     end
   end
+
+  def current_model
+    current_user.lists
+  end
 end

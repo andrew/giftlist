@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
 
   before_create :populate_oauth_user
 
-private
+  has_many :lists
+
+  private
 
   def populate_oauth_user
     unless oauth_token.blank?
@@ -19,5 +21,4 @@ private
       end
     end
   end
-
 end
