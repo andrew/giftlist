@@ -2,7 +2,7 @@
 
 = error_messages_for :list
 
-- form_for(:list, :url => object_url, :html => { :method => :put }) do |f|
+- form_for @list do |f|
   = render :partial => "form", :locals => {:f => f}
   %p= submit_tag "Update"
 
