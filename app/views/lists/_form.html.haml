@@ -1,0 +1,9 @@
+%p
+  %label{:for => "list_title"} Title:
+  = f.text_field :title
+%p
+  %label{:for => "list_css"} Css:
+  = f.text_area :css
+
+- f.fields_for :gifts do |gift_fields|
+  = render 'gifts/form', :f => gift_fields

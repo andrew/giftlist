@@ -1,0 +1,9 @@
+%h1 Creating list
+
+= error_messages_for :list
+
+- form_for @list do |f|
+  = render :partial => "form", :locals => {:f => f}
+  %p= submit_tag "Create"
+
+= link_to 'Back', objects_path

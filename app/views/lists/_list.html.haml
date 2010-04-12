@@ -1,0 +1,13 @@
+%div[list]
+  %p.title
+    %strong Title
+    = h list.title
+  %p.css
+    %strong Css
+    = h list.css
+
+  = link_to 'Show', object_path(list)
+  |
+  = link_to 'Edit', edit_object_path(list)
+  |
+  = link_to 'Destroy', object_path(list), :confirm => 'Really destroy list?', :method => :delete

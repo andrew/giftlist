@@ -1,0 +1,8 @@
+one:
+  id: 1
+  title: MyString
+  css: MyText
+two:
+  id: 2
+  title: MyString
+  css: MyText

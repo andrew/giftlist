@@ -10,6 +10,12 @@
     %title
       Gifts
   %body
+    - if !current_user
+      - form_for User.new, :url => account_path do |f|
+        = oauth_register_button :value => "Register with Twitter", :class => 'twitter'
+    - else
+      = link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?"
+
     - flash.each do |key, msg|
       .flash{:id => key}= msg
     = yield
