@@ -10,3 +10,4 @@ public/stylesheets/*.css
 tmp/restart.txt
 coverage/
 coverage.data
+resources/
