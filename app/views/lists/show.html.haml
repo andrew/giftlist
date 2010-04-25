@@ -2,10 +2,11 @@
 
 = render current_object.gifts
 
-%iframe{:src => list_path(current_object, :iframe => true)}
+- unless params[:iframe]
+  %iframe{:src => list_url(current_object, :iframe => true)}
 
-%textarea
-  %iframe{:src => list_path(current_object, :iframe => true)}
+  %textarea
+    %iframe{:src => list_url(current_object, :iframe => true)}
   
 
 = link_to 'Edit', edit_object_path
