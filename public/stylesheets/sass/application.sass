@@ -1,6 +1,7 @@
 body
+  background: url('../images/background.gif') repeat
   color: #5E3F1B
-  font: 100%/100% Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif
+  :font 75% "Arial", "Trebuchet MS", Verdana, sans-serif
 
 a
   color: #FF6A00
@@ -11,12 +12,12 @@ a
     text-decoration: underline
 
 h1, h2, h3, h4, dt
-  color: #FF6A00
+  color: #004080
 
 
 h2
   margin: 0px 0px 40px 0px
-  color: #5E3F1B
+  color: #150E06
   font-size: 36px
 
 .flash
@@ -82,6 +83,7 @@ p
       padding: 5px 10px 6px
       color: #fff
       text-decoration: none
+      border-radius: 5px
       -moz-border-radius: 5px 
       -webkit-border-radius: 5px
       -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5)
@@ -89,7 +91,7 @@ p
       text-shadow: 0 -1px 1px rgba(0,0,0,0.25)
       border-bottom: 1px solid rgba(0,0,0,0.25)
       position: relative
-      cursor: pointer
+      :cursor pointer
       background-color: #2daebf
       &:hover
         background-color: #007d9a
@@ -100,10 +102,25 @@ p
   width: 150px
   height: 22px
   text-indent: -3000px
+  :cursor pointer
 
   &:hover
     background-position: 0px -24px
 
   &:active
     background-position: 0px -48px
-   
+
+#content
+  background: #fff
+  width: 600px
+  margin: 60px auto
+  padding: 20px
+  min-height: 500px
+  border-radius: 5px
+  -moz-border-radius: 5px 
+  -webkit-border-radius: 5px
+  -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.5)
+
+#header
+  float: right
