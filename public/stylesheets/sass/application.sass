@@ -22,15 +22,17 @@ h2
 
 .flash
   :text-align center
-  :width 400px
   :z-index 999
-  :margin 10px auto 10px
+
   :background #F7FCDF
   :border 1px solid #EFFA9E
   :padding 5px
-  :border-radius 2px
-  :-moz-border-radius 2px
-  :-webkit-border-radius 2px
+  :-webkit-border-top-left-radius 5px
+  :-webkit-border-top-right-radius 5px
+  :-moz-border-radius-topleft 5px
+  :-moz-border-radius-topright 5px
+  :border-top-left-radius 5px
+  :border-top-right-radius 5px
   &#error
     :background #F3C0C1
     :border 1px solid #E5A7A9
@@ -114,13 +116,14 @@ p
   background: #fff
   width: 600px
   margin: 60px auto
-  padding: 20px
-  min-height: 500px
-  border-radius: 5px
   -moz-border-radius: 5px 
   -webkit-border-radius: 5px
   -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.5)
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.5)
+#inner
+  padding: 20px
+  min-height: 500px
+  border-radius: 5px
 
 #header
   float: right
