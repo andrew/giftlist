@@ -14,10 +14,11 @@
       - flash.each do |key, msg|
         .flash{:id => key}= msg
       #inner
-        #header
+        #header.clearfix
+          %h1= link_to 'Giftlist', root_path
           - if !current_user
             - form_for User.new, :url => account_path do |f|
               = oauth_register_button :value => "Register with Twitter", :class => 'twitter'
           - else
-            = link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?"
+            = link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?", :class => 'logout'
         = yield
