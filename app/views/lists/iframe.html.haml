@@ -1,6 +1,6 @@
 - content_for :head do
-  %style= current_object.css
+  %style= @list.css
 
-%h1= h current_object.title
+%h1= h @list.title
 
-= render current_object.gifts
+= render @list.gifts
