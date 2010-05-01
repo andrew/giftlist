@@ -5,9 +5,9 @@ class GiftsController < ApplicationController
     actions :all
     belongs_to :list
 
-    response_for :create do |format|
+    response_for :create, :update do |format|
       format.html do
-        redirect_to parent_object
+        redirect_to current_object.list
       end
     end
   end
