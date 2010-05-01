@@ -3,11 +3,14 @@ class ListsController < ApplicationController
 
   make_resourceful do
     actions :all
-    member_actions :iframe
 
     before :new do
       3.times { current_object.gifts.build }
     end
+  end
+
+  def iframe
+    @list = List.find(params[:id])
   end
 
   def current_model
