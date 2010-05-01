@@ -1,0 +1,6 @@
+- content_for :head do
+  %style= current_object.css
+
+%h1= h current_object.title
+
+= render current_object.gifts

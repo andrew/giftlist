@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
 
-  layout proc{ |c| c.params[:iframe] ? 'iframe' : "application" }
+  layout proc{ |c| c.params[:iframe] || c.action_name == 'iframe' ? 'iframe' : "application" }
 
   private
 
