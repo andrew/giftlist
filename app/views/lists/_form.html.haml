@@ -2,5 +2,6 @@
   = f.input :title
   = f.input :css
 
-- f.fields_for :gifts do |gift_fields|
-  = render 'gifts/form', :f => gift_fields
+- if current_object.new_record?
+  - f.fields_for :gifts do |gift_fields|
+    = render 'gifts/form', :f => gift_fields
