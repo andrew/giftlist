@@ -23,9 +23,9 @@
           ago -
           = link_to "Remove", gift.reservation, :confirm => 'Really remove reservation?', :method => :delete
 
-%iframe{:src => iframe_list_url(current_object)}
+%iframe{:src => iframe_list_url(current_object), :style => 'width:100%;height:500px;border:0px;'}
 
 %p
   %textarea{:readonly => true}
-    %iframe{:src => iframe_list_url(current_object)}
+    %iframe{:src => iframe_list_url(current_object), :style => 'width:100%;height:500px;border:0px;'}
 
