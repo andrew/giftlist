@@ -1,9 +1,13 @@
+- if params[:iframe]
+  - content_for :head do
+    %style= @gift.list.css
+
 %h1
   Reserving
   = @gift
 
-- semantic_form_for @reservation do |f|
+- semantic_form_for [@gift, @reservation], :url => polymorphic_path([@gift, @reservation], :iframe => params[:iframe]) do |f|
   = render :partial => "form", :locals => {:f => f}
   %p
     = submit_tag "Make your reservation"
-    = link_to 'Back to the gifts', root_path
+    = link_to 'Back to the gifts', list_path(@gift.list, :iframe => params[:iframe])

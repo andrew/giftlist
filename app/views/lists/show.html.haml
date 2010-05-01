@@ -1,4 +1,16 @@
+- if params[:iframe]
+  - content_for :head do
+    %style= current_object.css
+
 %h1= h current_object.title
+
+- if current_user && !params[:iframe]
+  %p
+    = link_to "Add Gift", new_list_gift_path(current_object)
+    |
+    = link_to 'Edit List', edit_object_path
+    |
+    = link_to 'Delete List', object_path, :confirm => 'Really destroy list?', :method => :delete
 
 = render current_object.gifts
 
@@ -7,10 +19,4 @@
 
   %textarea
     %iframe{:src => list_url(current_object, :iframe => true)}
-  
 
-= link_to 'Edit', edit_object_path
-|
-= link_to 'Destroy', object_path, :confirm => 'Really destroy list?', :method => :delete
-|
-= link_to 'Back', objects_path

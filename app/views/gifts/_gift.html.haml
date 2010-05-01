@@ -9,8 +9,9 @@
     - if gift.reserved?
       .details
         This gift was reserved by
-      = gift.reservation
+      = "#{gift.reservation},"
+
       = time_ago_in_words gift.reservation.created_at
       ago
     - else
-      = link_to 'Reserve this gift &raquo;', new_gift_reservation_path(gift)
+      = link_to 'Reserve this gift &raquo;', new_gift_reservation_path(gift, :iframe => params[:iframe])

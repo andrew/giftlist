@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
       format.html do
         flash[:notice] = "Thankyou for reserving the #{@reservation.gift}"
         Notifier.deliver_new_reservation(@reservation)
-        redirect_to gifts_path
+        redirect_to list_path(@gift.list, :iframe => params[:iframe])
       end
     end
   end
