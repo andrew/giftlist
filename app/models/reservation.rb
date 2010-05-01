@@ -4,6 +4,8 @@ class Reservation < ActiveRecord::Base
   validates_uniqueness_of :gift_id
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
+  delegate :list, :to => :gift
+
   def to_s
     name
   end

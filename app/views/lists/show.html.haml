@@ -9,15 +9,23 @@
 %ul#gifts
   - current_object.gifts.each do |gift|
     %li
-      %h3= gift
-      %p
-        = link_to 'Edit gift', edit_gift_path(gift)
-        |
-        = link_to 'Delete gift', gift, :confirm => 'Really destroy gift?', :method => :delete
+      %h3
+        = gift
+        %span
+          = link_to 'Edit gift', edit_gift_path(gift)
+          |
+          = link_to 'Delete gift', gift, :confirm => 'Really destroy gift?', :method => :delete
+      - if gift.reserved?
+        %p
+          Reserved by
+          = "#{mail_to gift.reservation.email, gift.reservation},"
+          = time_ago_in_words gift.reservation.created_at
+          ago -
+          = link_to "Remove", gift.reservation, :confirm => 'Really remove reservation?', :method => :delete
 
 %iframe{:src => iframe_list_url(current_object)}
 
-%p 
+%p
   %textarea{:readonly => true}
     %iframe{:src => iframe_list_url(current_object)}
 
