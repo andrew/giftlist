@@ -1,7 +1,7 @@
 %h1 Creating gift
 
-- semantic_form_for @gift do |f|
+- semantic_form_for [@list, @gift] do |f|
   = render :partial => "form", :locals => {:f => f}
   %p= submit_tag "Create"
 
-= link_to 'Back', objects_path
+= link_to 'Back', parent_object
