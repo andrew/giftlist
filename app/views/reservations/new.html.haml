@@ -6,8 +6,8 @@
   Reserving
   = @gift
 
-- semantic_form_for [@gift, @reservation], :url => polymorphic_path([@gift, @reservation], :iframe => params[:iframe]) do |f|
+- semantic_form_for [@gift, @reservation] do |f|
   = render :partial => "form", :locals => {:f => f}
   %p
     = submit_tag "Make your reservation"
-    = link_to 'Back to the gifts', list_path(@gift.list, :iframe => params[:iframe])
+    = link_to 'Back to the gifts', iframe_list_path(@gift.list)
