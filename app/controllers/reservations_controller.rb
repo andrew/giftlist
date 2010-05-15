@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   before_filter :require_user, :except => [:new, :create]
 
-  layout :iframe, :only => [:new, :create]
+  layout 'iframe', :only => [:new, :create]
 
   make_resourceful do
     actions :all
