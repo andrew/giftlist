@@ -1,6 +1,6 @@
 .clearfix[gift]
   %h2.title
-    = link_to_unless gift.url.blank?, h(gift.title), gift.url
+    = link_to_unless gift.url.blank?, h(gift.title), gift.url, :target => '_blank'
     %span.price
       = number_to_currency gift.price, :unit => "&pound;"
   .description= simple_format h(gift.description)
